@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ### Primary */
+
+--Soft-red: hsl(10, 79%, 65%);
+--Cyan: hsl(186, 34%, 60%);
+
+/* ### Neutral */
+
+--Dark-brown: hsl(25, 47%, 15%);
+--Medium-brown: hsl(28, 10%, 53%);
+--Cream: hsl(27, 66%, 92%);
+--Very-pale-orange: hsl(33, 100%, 98%);
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--Cream);
+}
+
+main {
+    display: grid;
+    place-content: center;
+    margin: 0 auto;
+    gap: 1rem;
+    margin-top: 10rem;
+    max-width: 31rem;
+
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--Soft-red);
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+    width: 25rem;
+    color: var(--Very-pale-orange);
+}
+
+.top-container p:nth-child(1) {
+    font-size: 0.8rem;
+}
+
+.top-container p:nth-child(2) {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin-top: 0.5rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--Very-pale-orange);
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.info h2 {
+    color: var(--Dark-brown);
+}
+
+.month-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--Medium-brown);
+    padding-top: 1rem;
+}
+
+.month-stats .left-col p:nth-child(1) {
+    color: var(--Medium-brown);
+}
+.month-stats .left-col p:nth-child(2) {
+    color: var(--Dark-brown);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.month-stats .right-col p:nth-child(1) {
+    color: var(--Dark-brown);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.month-stats .right-col p:nth-child(2) {
+    color: var(--Medium-brown);
+}
+
+
+
+/* chart */
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart{
+    display: flex;
+    flex-direction: column;
+    height: 12em;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-wrapper{
+    width: 2.5em;
+    display: flex;
+    align-items: flex-end;
+    height: 90%;
+}
+
+.chart-value{
+    height: var(--height);
+    background: var(--Soft-red);
+    width: 100%;
+    border-radius: 0.25em;
+}
+
+.chart-value.active{
+    background: var(--Cyan);
+}
