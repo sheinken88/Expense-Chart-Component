@@ -1,11 +1,15 @@
 // Import JSON from data.json file
-const data = fetch("./data.json")
-  .then((response) => response.json())
-  .then((data) => {
+async function jsonData() {
+  try {
+    let response = await fetch("./data.json");
+    let data = await response.json();
     console.log(data);
-    return data;
-  })
-  .catch((error) => console.log(error));
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+jsonData();
 
 let chartContainer = document.querySelector(".chart-container");
 
@@ -17,9 +21,9 @@ data.then((data) => {
     const height = item.amount / 7;
     let value = "";
     if (item.day == "wed") {
-      value = `<div class="chart-value active" style="--height:${height}em"></div>`;
+      value = `<div class="chart-value active" style="height:${height}em"></div>`;
     } else {
-      value = `<div class="chart-value" style="--height:${height}em"></div>`;
+      value = `<div class="chart-value" style="height:${height}em"></div>`;
     }
     chart.innerHTML = `
         <div class="chart-wrapper">
