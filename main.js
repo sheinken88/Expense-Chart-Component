@@ -1,15 +1,11 @@
 // Import JSON from data.json file
-async function jsonData() {
-  try {
-    let response = await fetch("./data.json");
-    let data = await response.json();
+const data = fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
     console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-jsonData();
+    return data;
+  })
+  .catch((error) => console.log(error));
 
 let chartContainer = document.querySelector(".chart-container");
 
